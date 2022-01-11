@@ -15,7 +15,7 @@ const ItemCreator = (props) => {
     }
 
     const handleCreateItemClick = ()=>{
-        axios.post('http://localhost:3000/inventory', {
+        axios.post('https://inventory-tracking-server.herokuapp.com/inventory', {
             itemName: itemName,
             itemCount: itemCount,
             warehouse: warehouse

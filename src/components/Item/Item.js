@@ -28,7 +28,7 @@ const Item = (props) => {
     }
 
     const handleDelete = ()=>{
-        axios.delete(`http://localhost:3000/inventory/${props.itemID}`)
+        axios.delete(`https://inventory-tracking-server.herokuapp.com/inventory/${props.itemID}`)
         .then((result)=>{
             props.parentSetServerMessage(result.data.msg)
         }).catch((err)=>{
@@ -37,7 +37,7 @@ const Item = (props) => {
     } 
 
     const handleSubmitEdit = ()=>{
-        axios.put(`http://localhost:3000/inventory/${props.itemID}`, {
+        axios.put(`https://inventory-tracking-server.herokuapp.com/inventory/${props.itemID}`, {
             itemCount: itemCount,
             warehouse: warehouse
         }).then((result)=>{

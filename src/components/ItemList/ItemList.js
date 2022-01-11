@@ -12,7 +12,7 @@ const ItemList = () => {
     const [serverMessage, setServerMessage] = useState("Welcome to the inventory-tracking-system website")
     
     useEffect(()=>{
-        axios.get('http://localhost:3000/inventory')
+        axios.get('https://inventory-tracking-server.herokuapp.com/inventory')
         .then((result)=>{
             setItems(result.data.items)
         }).catch((err)=>{
@@ -22,7 +22,7 @@ const ItemList = () => {
 
     const handleGetCSV = ()=>{
         axios({
-            url: 'http://localhost:3000/inventory/csv',
+            url: 'https://inventory-tracking-server.herokuapp.com/inventory/csv',
             method: 'GET',
             responseType: 'blob',
         }).then((response) => {
